@@ -1,0 +1,317 @@
+
+/* Carlos Eduardo Pereira ; (2024002532) ; 27/09/2024 */
+
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilo da hotbar */
+.menu {
+  background-color: #000000;
+  /* Cor de fundo da hotbar */
+  width: 100%;
+  /* Largura total */
+  position: fixed;
+  /* Fixa no topo da página */
+  top: 0;
+  /* Alinha ao topo */
+  left: 0;
+  /* Alinha à esquerda */
+  z-index: 1000;
+  /* Coloca a hotbar acima de outros conteúdos */
+  padding: 7px 0;
+  /* Espaçamento interno */
+}
+
+/* Estilo da lista de navegação */
+.menu ul {
+  list-style: none;
+  /* Remove marcadores da lista */
+  display: flex;
+  /* Exibe os itens em linha */
+  justify-content: flex-start;
+  /* Alinha itens à esquerda */
+  padding: 0;
+  /* Remove espaçamento padrão */
+  margin: 0;
+  /* Remove margem padrão */
+}
+
+/* Estilo dos itens da lista */
+.menu ul li {
+  margin-right: 10px;
+  /* Espaço entre os itens */
+}
+
+.menu ul li a {
+  color: #ffffff;
+  /* Cor do texto */
+  text-decoration: none;
+  /* Remove o sublinhado */
+  padding: 5px 5px;
+  /* Espaçamento interno */
+  display: block;
+  /* Faz com que o link ocupe todo o espaço do item */
+  transition: background-color 0.3s;
+  /* Efeito de transição suave */
+  font-family: fantasy;
+  font-size: 20px;
+}
+
+/* Estilo do efeito hover nos links */
+.menu ul li a:hover {
+  background-color: #525151;
+  /* Cor ao passar o mouse */
+}
+
+/* Para evitar que o conteúdo principal seja coberto pelo menu */
+body {
+  padding-top: 40px;
+  /* Espaço para que o conteúdo não fique escondido atrás da hotbar */
+  background-color: #91ffd1;
+  /* Cor de fundo do corpo */
+}
+
+/* Estilo do quadrado das regras */
+.regras {
+  background-color: #ffffff;
+  /* Cor de fundo do quadrado */
+  border: 4px solid #000000;
+  /* Bordas do quadrado */
+  padding: 10px;
+  /* Espaçamento interno */
+  margin: 20px auto;
+  /* Margem superior/inferior e centralização */
+  width: 40%;
+  /* Largura do quadrado */
+  border-radius: 11px;
+  /* Bordas arredondadas */
+  font-family: cursive;
+  /* Família de fontes */
+  font-size: 1.2rem;
+  /* Tamanho da fonte */
+}
+
+/* Estilo do texto dentro do quadrado */
+.regras li {
+  margin-bottom: 0.5rem;
+  /* Espaço abaixo do item da lista */
+}
+
+/* Estilo da lista dentro do quadrado */
+.regras ul {
+  list-style-type: disc;
+  /* Marcadores para a lista */
+  padding-left: 20px;
+  /* Espaçamento à esquerda da lista */
+}
+
+/* Estilo do título das regras */
+.regras2 {
+  text-align: center;
+  /* Centraliza o texto */
+  font-size: 2rem;
+  /* Tamanho do título */
+}
+
+.tituloh1 {
+  color: #ffffff;
+  /* Cor do título */
+  font-size: 4.5rem;
+  /* Tamanho da fonte */
+  text-align: center;
+  /* Centraliza o texto */
+  font-family: cursive;
+  /* Família de fontes */
+  text-shadow: 6px 6px 6px #000000;
+  /* Sombra do texto */
+  margin: -7px 0;
+  /* Margem acima e abaixo do título */
+}
+
+.botao-conteiner {
+  text-align: center;
+  font-size: 5rem;
+}
+
+.botao-go {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  padding: 20px 40px;
+  font-size: 3rem;
+  cursor: pointer;
+  color: #000000;
+  background-color: #44fc1f;
+  transition: 0.3;
+  border-radius: 15px;
+}
+
+.botao-go:hover {
+  transition: background-color 0.5s;
+  background-color: #12ffff;
+  color: #000000;
+  border-radius: 15px;
+}
+
+.animais {
+  display: block;
+  margin: 0 auto;
+  width: 350px;
+  border: 4px solid #000000;
+}
+
+input {
+  margin-bottom: 10px;
+  /* Espaçamento inferior para o input */
+  width: 230px;
+  height: 40px;
+  border: 4px solid #000000;
+  /* Define a espessura e a cor da borda */
+  border-radius: 25px;
+  /* Arredonda as bordas */
+  background-color: #fdfdfd;
+  font-size: 23px;
+  /* Aumenta o tamanho da fonte */
+  text-align: center;
+}
+
+button {
+  margin: 5px;
+  /* Espaçamento ao redor dos botões */
+}
+
+
+#Resp1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 9.5vh;
+}
+
+/* centraliza o input no meio */
+
+
+.botaoProxPag {
+  display: flex;
+  justify-content: center;
+  /* Centraliza os botões horizontalmente */
+  justify-content: column;
+  margin-top: 10px;
+  /* Espaçamento superior para os botões */
+
+}
+
+.botaoProxPag button {
+  background-color: #000000;
+  /* Cor de fundo do botão */
+  color: #ffffff;
+  /* Cor do texto */
+  border: none;
+  /* Remove a borda padrão */
+  border-radius: 8px;
+  /* Bordas arredondadas */
+  padding: 22px 30px;
+  /* Aumenta o espaçamento interno (vertical e horizontal) */
+  font-size: 27px;
+  /* Aumenta o tamanho da fonte */
+  cursor: pointer;
+  /* Muda o cursor para indicar que é clicável */
+  transition: background-color 0.3s, transform 0.3s;
+  /* Transição suave para a mudança de cor e tamanho */
+  width: 250px;
+  /* Largura do botão */
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.botaoProxPag button:hover {
+  background-color: #1403ff;
+  /* Cor do botão ao passar o mouse */
+  transform: scale(1.05);
+  /* Aumenta ligeiramente o botão ao passar o mouse */
+}
+
+.mato {
+  position: absolute;
+  /* Para posicionar a div de forma absoluta */
+  bottom: 0;
+  /* Fica encostada na borda inferior */
+  left: 0;
+  /* Alinha à esquerda */
+  height: 300px;
+  /* Ajuste a altura conforme necessário */
+  width: 100%;
+  /* Largura total */
+  overflow: hidden;
+  /* Garante que nada transborde a div */
+  margin: 0;
+  /* Remove qualquer margem */
+}
+
+/* Estilo da tabela */
+#animalTable {
+  width: 55%;
+  border-collapse: collapse;
+  /* Remove espaçamento entre as bordas */
+  margin: 0 auto;
+  /* Centraliza horizontalmente */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  /* Define uma fonte mais moderna */
+  background-color: #cecdcd;
+  /* Cor de fundo suave */
+  table-layout: fixed;
+  /* Define a largura das colunas como fixa */
+}
+
+#animalTable th,
+#animalTable td {
+  padding: 1px;
+  /* Adiciona espaçamento interno */
+  text-align: center;
+  /* Centraliza o texto nas células */
+  border: 5px solid #000000;
+  /* Bordas finas e claras */
+  font-size: 16px;
+  /* Tamanho da fonte */
+}
+
+/* Cabeçalho da tabela */
+#animalTable th {
+  background-color: #1f7722;
+  /* Fundo verde para o cabeçalho */
+  color: #ffffff;
+  /* Texto branco no cabeçalho */
+  font-size: 20px;
+  /* Tamanho do texto maior no cabeçalho */
+  text-transform: uppercase;
+  /* Texto em maiúsculas */
+}
+
+/* Zebra striping (alternância de cores nas linhas) */
+#animalTable tr:nth-child(even) {
+  background-color: #f2f2f2;
+  /* Cor mais clara nas linhas pares */
+}
+
+/* Cor de fundo ao passar o mouse sobre as células */
+#animalTable tr:hover {
+  background-color: #2985ee;
+  /* Fundo cinza claro ao passar o mouse */
+}
+
+.textoExp {
+  margin: 30px 50px;
+  text-align: center;
+  font-family: cursive;
+  font-size: 20px;
+}
+
+.subTextoExp {
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 35px;
+  /* Tamanho da fonte */
+  color: #3320dd;
+
+
+}
