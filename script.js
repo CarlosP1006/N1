@@ -37,5 +37,5 @@ function clearItems() {
 }
 
 function goToAnimal1() {
-    window.location.href = './animal1.html';
+    window.location.href = './animal1.html'; // função pra ir até a pagina animal 1
 }
