@@ -1,9 +1,6 @@
-
-// Carlos Eduardo Pereira ; (2024002532) ; 27/09/2024 
-
 var arr = []; // Array para armazenar os itens
 
-// Adiciona um novo item ao array e atualiza o localStorage
+// Função para adicionar um novo item ao array e atualizar o localStorage
 function addItem() {
     if (localStorage.meuArr) {
         arr = JSON.parse(localStorage.getItem('meuArr'));
@@ -14,7 +11,7 @@ function addItem() {
     localStorage.meuArr = JSON.stringify(arr);
 }
 
-// Mostra os itens na última coluna da tabela
+// Função para mostrar os itens na tabela
 function showItems() {
     if (localStorage.meuArr) {
         arr = JSON.parse(localStorage.getItem('meuArr'));
@@ -37,4 +34,10 @@ function clearItems() {
     arr = [];
     localStorage.meuArr = JSON.stringify(arr);
     showItems(); // Atualiza a tabela após limpar os itens
+}
+
+// Função para iniciar o jogo
+function startGame() {
+    clearItems(); // Chama a função para limpar os itens
+    window.location.href = './animal1.html'; // Redireciona para animal1.html
 }

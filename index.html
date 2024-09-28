@@ -1,5 +1,3 @@
-<!-- Carlos Eduardo Pereira ; (2024002532) ; 27/09/2024 -->
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -7,16 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zootopia</title>
-    <meta name="description"
-        content="Zootopia é um projeto divertido onde você cria nomes para animais fictícios gerados por IA.">
+    <meta name="description" content="Zootopia é um projeto divertido onde você cria nomes para animais fictícios gerados por IA.">
     <meta name="keywords" content="Zootopia, animais, IA, nomeador de animais, projeto interativo">
     <meta name="author" content="Carlos Eduardo Pereira">
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="./script.js"></script>
+    <script type="text/javascript" src="./script.js" defer></script>
 </head>
 
 <body>
-
     <div class="menu">
         <ul>
             <li><a href="./index.html">Início</a></li>
@@ -33,20 +29,14 @@
             <li>2: Você deve criar um nome para o animal fictício que lhe apareceu</li>
             <li>3: Após escrever o nome, clique em enviar e pule para o próximo animal</li>
         </ul>
-
     </div>
 
     <div class="botao-conteiner">
-        <a href="./animal1.html">
-            <button onclick=clearItems() class="botao-go">Começar</button>
-    </div>
-    </a>
-
-    <img src="./BancodeDados/0_mato.png" class="mato">
-    <div class="linhaFinal">
-
+        <button class="botao-go" onclick="startGame()">Começar</button>
     </div>
 
+    <img src="./BancodeDados/0.png" class="mato">
+    <div class="linhaFinal"></div>
 </body>
 
 </html>
