@@ -313,5 +313,49 @@ button {
   /* Tamanho da fonte */
   color: #3320dd;
 
-
 }
+
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+  .menu {
+    padding: 10px 0; /* Ajusta o padding para caber melhor */
+  }
+
+  .regras {
+    width: 90%; /* Aumenta a largura em telas menores */
+  }
+
+  .tituloh1 {
+    font-size: 3rem; /* Reduz o tamanho do título */
+  }
+
+  .botao-go {
+    font-size: 2.5rem; /* Reduz o tamanho do botão */
+    padding: 15px 30px; /* Ajusta o padding */
+  }
+
+  input {
+    width: 100%; /* Faz o input ocupar toda a largura disponível */
+  }
+
+  #animalTable {
+    width: 100%; /* Tabela ocupa toda a largura */
+  }
+
+  #animalTable th,
+  #animalTable td {
+    font-size: 14px; /* Reduz o tamanho da fonte da tabela */
+  }
+
+  .menu ul {
+    flex-direction: row; /* Mantém os itens na horizontal */
+    justify-content: space-around; /* Espaça os itens igualmente */
+  }
+
+  .tituloh1 {
+    font-size: 3rem; /* Reduz o tamanho do título */
+    margin-top: 60px; /* Garante que o título não fique atrás do menu */
+  }
+}
+
