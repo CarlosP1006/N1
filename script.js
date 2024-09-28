@@ -1,6 +1,6 @@
 var arr = []; // Array para armazenar os itens
 
-// Função para adicionar um novo item ao array e atualizar o localStorage
+// Adiciona um novo item ao array e atualiza o localStorage
 function addItem() {
     if (localStorage.meuArr) {
         arr = JSON.parse(localStorage.getItem('meuArr'));
@@ -11,7 +11,7 @@ function addItem() {
     localStorage.meuArr = JSON.stringify(arr);
 }
 
-// Função para mostrar os itens na tabela
+// Mostra os itens na última coluna da tabela
 function showItems() {
     if (localStorage.meuArr) {
         arr = JSON.parse(localStorage.getItem('meuArr'));
@@ -34,10 +34,4 @@ function clearItems() {
     arr = [];
     localStorage.meuArr = JSON.stringify(arr);
     showItems(); // Atualiza a tabela após limpar os itens
-}
-
-// Função para iniciar o jogo
-function startGame() {
-    clearItems(); // Chama a função para limpar os itens
-    window.location.href = './animal1.html'; // Redireciona para animal1.html
 }
