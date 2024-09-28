@@ -35,3 +35,7 @@ function clearItems() {
     localStorage.meuArr = JSON.stringify(arr);
     showItems(); // Atualiza a tabela após limpar os itens
 }
+
+function goToAnimal1() {
+    window.location.href = './animal1.html';
+}
