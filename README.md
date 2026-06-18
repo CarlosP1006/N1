@@ -1,5 +1,7 @@
 # Zootopia
 
+[Jogar agora →](https://carlosp1006.github.io/hybrid-beasts-game)
+
 Joguinho interativo onde você vê animais híbridos gerados por IA e inventa um nome para cada um. Ao final, uma tabela exibe todos os nomes que você criou.
 
 Feito como primeiro projeto da matéria de Desenvolvimento Web.
@@ -14,7 +16,3 @@ Feito como primeiro projeto da matéria de Desenvolvimento Web.
 ## Tecnologias
 
 HTML · CSS · JavaScript — sem frameworks ou dependências externas
-
-## Demo
-
-[Jogar agora →](https://carlosp1006.github.io/hybrid-beasts-game)
