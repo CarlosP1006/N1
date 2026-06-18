@@ -1,41 +1,73 @@
-var arr = []; // Array para armazenar os itens
+const ANIMALS = [
+  { a: "Bicho-Preguiça", b: "Sapo" },
+  { a: "Cachorro",        b: "Morcego" },
+  { a: "Cavalo",          b: "Peixe" },
+  { a: "Girafa",          b: "Tigre" },
+  { a: "Tubarão",         b: "Jacaré" },
+  { a: "Urso",            b: "Camaleão" },
+  { a: "Leão",            b: "Foca" },
+  { a: "Lobo",            b: "Porco" },
+  { a: "Panda",           b: "Canguru" },
+  { a: "Pinguim",         b: "Cervo" },
+  { a: "Porquinho da Índia", b: "Coruja" },
+  { a: "Rato",            b: "Gato" },
+  { a: "Tigre",           b: "Jacaré" },
+  { a: "Hipopótamo",      b: "Cobra" },
+  { a: "Urso",            b: "Abelha" },
+  { a: "Leão",            b: "Águia" },
+];
 
-// Adiciona um novo item ao array e atualiza o localStorage
-function addItem() {
-    if (localStorage.meuArr) {
-        arr = JSON.parse(localStorage.getItem('meuArr'));
-    }
-    let novoNome = document.getElementById("entrada1").value; // Certifique-se de que o input com id 'entrada1' exista
-    arr.push(novoNome);
-    document.getElementById("entrada1").value = "";
-    localStorage.meuArr = JSON.stringify(arr);
+function getCurrentN() {
+  return parseInt(new URLSearchParams(window.location.search).get('n') || '1', 10);
 }
 
-// Mostra os itens na última coluna da tabela
-function showItems() {
-    if (localStorage.meuArr) {
-        arr = JSON.parse(localStorage.getItem('meuArr'));
-    }
+function loadAnimalPage() {
+  const n = getCurrentN();
+  const animal = ANIMALS[n - 1];
+  if (!animal) {
+    window.location.href = './index.html';
+    return;
+  }
 
-    const tableBody = document.getElementById('animalTable').getElementsByTagName('tbody')[0];
-    const rows = tableBody.getElementsByTagName('tr');
+  const img = document.getElementById('animal-img');
+  img.src = `./BancodeDados/${n}.jpeg`;
+  img.alt = `Híbrido de ${animal.a} e ${animal.b}`;
 
-    for (let i = 0; i < rows.length; i++) {
-        if (i < arr.length) { // Verifica se ainda há itens para adicionar
-            rows[i].cells[2].innerHTML = arr[i]; // Adiciona o item à última coluna
-        } else {
-            rows[i].cells[2].innerHTML = ""; // Limpa a célula se não houver mais itens
-        }
-    }
+  const input = document.getElementById('entrada1');
+  input.focus();
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') submitAndAdvance();
+  });
 }
 
-// Limpa todos os itens armazenados
-function clearItems() {
-    arr = [];
-    localStorage.meuArr = JSON.stringify(arr);
-    showItems(); // Atualiza a tabela após limpar os itens
+function submitAndAdvance() {
+  const n = getCurrentN();
+  const saved = JSON.parse(localStorage.getItem('meuArr') || '[]');
+  saved[n - 1] = document.getElementById('entrada1').value.trim();
+  localStorage.setItem('meuArr', JSON.stringify(saved));
+
+  if (n >= ANIMALS.length) {
+    window.location.href = './tabelaFinal.html';
+  } else {
+    window.location.href = `./animal.html?n=${n + 1}`;
+  }
 }
 
-function goToAnimal1() {
-    window.location.href = './animal1.html'; // função pra ir até a pagina animal 1
+function startGame() {
+  localStorage.setItem('meuArr', JSON.stringify([]));
+  window.location.href = './animal.html?n=1';
+}
+
+function showResults() {
+  const saved = JSON.parse(localStorage.getItem('meuArr') || '[]');
+  const tbody = document.querySelector('#animalTable tbody');
+  if (!tbody) return;
+
+  tbody.innerHTML = '';
+  ANIMALS.forEach(function (pair, i) {
+    const row = tbody.insertRow();
+    row.insertCell(0).textContent = pair.a;
+    row.insertCell(1).textContent = pair.b;
+    row.insertCell(2).textContent = saved[i] || '—';
+  });
 }
