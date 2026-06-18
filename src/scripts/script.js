@@ -30,7 +30,7 @@ function loadAnimalPage() {
   }
 
   const img = document.getElementById('animal-img');
-  img.src = `src/assets/img/${n}.jpeg`;
+  img.src = `assets/img/${n}.jpeg`;
   img.alt = `Híbrido de ${animal.a} e ${animal.b}`;
 
   const input = document.getElementById('entrada1');
